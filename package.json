@@ -1,0 +1,14 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "description": "A new project",
+  "main": "",
+  "scripts": {
+    "dev": "npx light-server -s . -w \"**/*\""
+  },
+  "author": "statox",
+  "license": "MIT",
+  "devDependencies": {
+    "light-server": "^2.8.0"
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Bezier experiment</title>
+        <meta name="description" content="A project description">
+
+        <!-- newcss framework, lightweight and elegant css framework -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/open-fonts@1.1.1/fonts/inter.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+
+        <!-- Prism the css for the code syntax highlighting -->
+        <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css">
+
+        <!-- Custom css -->
+        <link rel="stylesheet" href="css/index.css">
+
+        <!-- Dependencies -->
+        <script async defer src="https://api.newcss.net/latest.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+        <!-- App -->
+        <script defer src="app/sketch.js"></script>
+        <script defer src="app/Interface.js"></script>
+    </head>
+
+    <body>
+        <div class="content-container" id="appDiv">
+            <p>
+                <button v-on:click="generatePoints">Regenerate points</button>
+                <button v-on:click="move = !move">Move</button>
+            </p>
+            <p>
+            Number of points
+            <input type="number" v-model="nbCheckpoints" step="1" min="2" @change="generatePoints" >
+            </p>
+            <p>
+            Bezier steps
+            <input type="number" v-model="steps" step="1" min="1" @change="refreshCurve" >
+            Bezier t
+            <input type="number" v-model="bezierT" step="0.1" min="0" max="1" @change="refreshCurve" >
+            </p>
+            <p>
+            <div oncontextmenu="return false;" id="canvasDiv"></div>
+            </p>
+        </div>
+    </body>
+
+</html>
