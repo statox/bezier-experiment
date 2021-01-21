@@ -28,6 +28,24 @@ function setup() {
     generatePoints();
 }
 
+function mouseDragged(event) {
+    if (mouseX > 0 && mouseY > 0 && mouseX < width && mouseY < height) {
+        const draggedPoint = checkpoints.find((p) => {
+            const pos = createVector(p.x, p.y);
+            const mouse = createVector(mouseX, mouseY);
+            const d = pos.dist(mouse);
+            return d < 50;
+        });
+
+        if (draggedPoint) {
+            draggedPoint.x = mouseX;
+            draggedPoint.y = mouseY;
+
+            refreshCurve();
+        }
+    }
+}
+
 function draw() {
     background(10);
     fill('blue');
