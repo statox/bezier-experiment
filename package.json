@@ -1,7 +1,7 @@
 {
-  "name": "project",
+  "name": "Bezier curves",
   "version": "0.0.1",
-  "description": "A new project",
+  "description": "Generate the bezier curve around a set of points.",
   "main": "",
   "scripts": {
     "dev": "npx light-server -s . -w \"**/*\""
